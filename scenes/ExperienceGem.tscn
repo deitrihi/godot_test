@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c4irm3rldohcl"]
+
+[ext_resource type="Script" uid="uid://cv44owerrwdjn" path="res://scripts/ExperienceGem.gd" id="1_doxgx"]
+[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_y14mk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_doxgx"]
+radius = 16.0
+
+[node name="ExperienceGem" type="Area2D" unique_id=1796273765]
+script = ExtResource("1_doxgx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=130726262]
+shape = SubResource("CircleShape2D_doxgx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1191045821]
+modulate = Color(0.2, 1, 0.3, 1)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_y14mk")

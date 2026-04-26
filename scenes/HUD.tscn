@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dqqeja6mh50tr"]
+
+[ext_resource type="Script" uid="uid://dnap4icxlvk57" path="res://scripts/HUD.gd" id="1_qpvh6"]
+
+[node name="HUD" type="CanvasLayer" unique_id=2060083367]
+script = ExtResource("1_qpvh6")
+
+[node name="StatsPanel" type="VBoxContainer" parent="." unique_id=137878004]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="LevelLabel" type="Label" parent="StatsPanel" unique_id=546639101]
+layout_mode = 2
+text = "Lv. 1"
+
+[node name="HealthBar" type="ProgressBar" parent="StatsPanel" unique_id=1177844854]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+value = 100.0
+
+[node name="XPBar" type="ProgressBar" parent="StatsPanel" unique_id=1466400248]
+custom_minimum_size = Vector2(200, 12)
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="." unique_id=1210939279]
+custom_minimum_size = Vector2(120, 30)
+offset_left = 510.0
+offset_top = 10.0
+offset_right = 510.0
+offset_bottom = 10.0
+text = "0s"
+horizontal_alignment = 1

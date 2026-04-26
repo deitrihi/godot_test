@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://diqjtm1d71bym"]
+
+[ext_resource type="Script" uid="uid://d2myykevo85mo" path="res://scripts/GameOver.gd" id="1_6bcno"]
+
+[node name="GameOver" type="Control" unique_id=401823871]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bcno")
+
+[node name="BG" type="ColorRect" parent="." unique_id=549382828]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.02, 0.02, 0.05, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=194167910]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1547655947]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="GameOverLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1186761350]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=16017488]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Survived: 00:00"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=517959063]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PLAY AGAIN"
+
+[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1523438804]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "MAIN MENU"

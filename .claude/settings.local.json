@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\deitr\\\\.claude\\\\\" -Force -Recurse | ForEach-Object { $_.FullName })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\deitr\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\\" -Force | ForEach-Object { $_.FullName })",
+      "mcp__godot__get_console_log"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dsggfn1u1ve5u"]
+
+[ext_resource type="Script" uid="uid://djwfe2oqtdem2" path="res://scripts/GameManager.gd" id="1_ibkli"]
+[ext_resource type="PackedScene" uid="uid://cgjj2bmatef67" path="res://scenes/Player.tscn" id="2_qbsmt"]
+[ext_resource type="Script" uid="uid://bmb53xtklg4xy" path="res://scripts/EnemySpawner.gd" id="3_cpr0p"]
+[ext_resource type="Script" uid="uid://jdx4lfppivrg" path="res://scripts/LevelSystem.gd" id="4_78awf"]
+[ext_resource type="PackedScene" uid="uid://dqqeja6mh50tr" path="res://scenes/HUD.tscn" id="5_s0nni"]
+[ext_resource type="PackedScene" uid="uid://dos12ydhc0qbb" path="res://scenes/LevelUpUI.tscn" id="6_aug50"]
+
+[node name="Game" type="Node2D" unique_id=822262897]
+script = ExtResource("1_ibkli")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1418237348]
+offset_left = -50000.0
+offset_top = -50000.0
+offset_right = 50000.0
+offset_bottom = 50000.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="Player" parent="." unique_id=1085263408 instance=ExtResource("2_qbsmt")]
+
+[node name="EnemySpawner" type="Node" parent="." unique_id=1356864614]
+script = ExtResource("3_cpr0p")
+
+[node name="LevelSystem" type="Node" parent="." unique_id=236692918]
+script = ExtResource("4_78awf")
+
+[node name="HUD" parent="." unique_id=2060083367 instance=ExtResource("5_s0nni")]
+
+[node name="LevelUpUI" parent="." unique_id=1918276637 instance=ExtResource("6_aug50")]
