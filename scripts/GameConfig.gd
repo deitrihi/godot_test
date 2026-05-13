@@ -39,4 +39,4 @@ var upgrades := [
 	{"name": "Rapid Fire", "desc": "Attack -0.2s",    "type": "fire_rate", "value": -0.2},
 	{"name": "Speed Up",   "desc": "+30 Move Speed",  "type": "speed",     "value": 30.0},
 	{"name": "Vitality",   "desc": "+20 Max HP",      "type": "health",    "value": 20},
-]
+] 

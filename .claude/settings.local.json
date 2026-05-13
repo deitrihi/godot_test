@@ -3,7 +3,15 @@
     "allow": [
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\deitr\\\\.claude\\\\\" -Force -Recurse | ForEach-Object { $_.FullName })",
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\deitr\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\\" -Force | ForEach-Object { $_.FullName })",
-      "mcp__godot__get_console_log"
+      "mcp__godot__get_console_log",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\Player.gd\"\\))",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\Weapon.gd\"\\))",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\Enemy.gd\"\\))",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\EnemySpawner.gd\"\\))",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\Projectile.gd\"\\))",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\LevelSystem.gd\"\\))",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\LevelUpUI.gd\"\\))",
+      "PowerShell($path = \"c:\\\\dev\\\\godot\\\\test\"; Get-Content \\(Join-Path $path \"scripts\\\\HUD.gd\"\\))"
     ]
   }
 }
