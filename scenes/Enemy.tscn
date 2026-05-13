@@ -1,7 +1,90 @@
 [gd_scene format=3 uid="uid://cqfsbdepu72lu"]
 
 [ext_resource type="Script" uid="uid://di701ejs61mba" path="res://scripts/Enemy.gd" id="1_3gvst"]
-[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_55jtl"]
+[ext_resource type="Texture2D" uid="uid://05anbvvv8bqe" path="res://assets/sprites/Separated/Slime.png" id="2_55jtl"]
+
+[sub_resource type="AtlasTexture" id="AT_ei0"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ei1"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ei2"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ei3"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ej0"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ej1"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ej2"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ej3"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ej4"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_ej5"]
+atlas = ExtResource("2_55jtl")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SF_enemy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_ei0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ei1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ei2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ei3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_ej0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ej1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ej2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ej3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ej4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_ej5")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3gvst"]
 radius = 24.0
@@ -9,10 +92,10 @@ radius = 24.0
 [node name="Enemy" type="CharacterBody2D" unique_id=405024635]
 script = ExtResource("1_3gvst")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=507140947]
-modulate = Color(1, 0.2, 0.2, 1)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_55jtl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507140947]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SF_enemy")
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=886246803]
 shape = SubResource("CircleShape2D_3gvst")

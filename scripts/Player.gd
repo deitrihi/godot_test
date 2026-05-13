@@ -21,11 +21,18 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * speed
 	move_and_slide()
 
+	if direction != Vector2.ZERO:
+		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.flip_h = direction.x < 0
+	else:
+		$AnimatedSprite2D.play("idle")
+
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
 	health -= amount
 	health = max(health, 0)
+	$HurtSound.play()
 	if health <= 0:
 		die()
 

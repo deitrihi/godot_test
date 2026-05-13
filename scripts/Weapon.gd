@@ -35,3 +35,4 @@ func _fire() -> void:
 	proj.direction = (nearest.global_position - global_position).normalized()
 	proj.damage = damage
 	get_tree().current_scene.add_child(proj)
+	$ShootSound.play()

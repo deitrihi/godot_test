@@ -1,8 +1,112 @@
 [gd_scene format=3 uid="uid://cgjj2bmatef67"]
 
 [ext_resource type="Script" uid="uid://vv5p3ntgw3rq" path="res://scripts/Player.gd" id="1_p0vlq"]
-[ext_resource type="Texture2D" uid="uid://ddxmxgyyfy8mn" path="res://icon.svg" id="2_v6fml"]
+[ext_resource type="Texture2D" uid="uid://bkrr4pymutl8r" path="res://assets/sprites/Separated/3boood_pro.png" id="2_v6fml"]
 [ext_resource type="Script" uid="uid://b2jabigrym4ee" path="res://scripts/Weapon.gd" id="3_3li8b"]
+[ext_resource type="AudioStream" uid="uid://cjvyxxhjahtlf" path="res://assets/Audios/Hurt.wav" id="4_hurt"]
+[ext_resource type="AudioStream" uid="uid://b4p8wyxbr64th" path="res://assets/Audios/Shoot.wav" id="5_shoot"]
+
+[sub_resource type="AtlasTexture" id="AT_pi0"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pi1"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pi2"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pi3"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pw0"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pw1"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pw2"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pw3"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pa0"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pa1"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pa2"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AT_pa3"]
+atlas = ExtResource("2_v6fml")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SF_player"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_pi0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pi3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_pw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pw3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_pa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_pa3")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0vlq"]
 radius = 20.0
@@ -10,14 +114,21 @@ radius = 20.0
 [node name="Player" type="CharacterBody2D" unique_id=1085263408]
 script = ExtResource("1_p0vlq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1048227568]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_v6fml")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1048227568]
+scale = Vector2(2.0, 2.0)
+sprite_frames = SubResource("SF_player")
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118986889]
 shape = SubResource("CircleShape2D_p0vlq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=848546750]
 
+[node name="HurtSound" type="AudioStreamPlayer" parent="." unique_id=392847561]
+stream = ExtResource("4_hurt")
+
 [node name="Weapon" type="Node2D" parent="." unique_id=261376261]
 script = ExtResource("3_3li8b")
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="Weapon" unique_id=847291038]
+stream = ExtResource("5_shoot")
