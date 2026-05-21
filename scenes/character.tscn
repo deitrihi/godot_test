@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c3rue7rg31qls"]
+
+[ext_resource type="Texture2D" uid="uid://cealarnkorrcw" path="res://assets/sprites/tank/default_tank_up_6.png" id="1_agfs1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agfs1"]
+atlas = ExtResource("1_agfs1")
+region = Rect2(169, 35, 252, 436)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkhd4"]
+atlas = ExtResource("1_agfs1")
+region = Rect2(642, 35, 252, 436)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrhn5"]
+atlas = ExtResource("1_agfs1")
+region = Rect2(1115, 35, 252, 436)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my7n2"]
+atlas = ExtResource("1_agfs1")
+region = Rect2(169, 535, 252, 436)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp8ca"]
+atlas = ExtResource("1_agfs1")
+region = Rect2(642, 535, 252, 436)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lw5n"]
+atlas = ExtResource("1_agfs1")
+region = Rect2(1115, 535, 252, 436)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cgup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agfs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkhd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrhn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my7n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp8ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lw5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Character" type="AnimatedSprite2D" unique_id=649436171]
+texture_filter = 1
+position = Vector2(-89, -36)
+sprite_frames = SubResource("SpriteFrames_2cgup")
+frame_progress = 0.053211946
+centered = false
