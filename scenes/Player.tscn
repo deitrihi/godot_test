@@ -1,73 +1,42 @@
 [gd_scene format=3 uid="uid://cgjj2bmatef67"]
 
 [ext_resource type="Script" uid="uid://vv5p3ntgw3rq" path="res://scripts/Player.gd" id="1_p0vlq"]
-[ext_resource type="Texture2D" uid="uid://bkrr4pymutl8r" path="res://assets/sprites/Separated/3boood_pro.png" id="2_v6fml"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tank/tank_body.png" id="2_tank"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tank/tank_turret.png" id="6_turret"]
 [ext_resource type="Script" uid="uid://b2jabigrym4ee" path="res://scripts/Weapon.gd" id="3_3li8b"]
 [ext_resource type="AudioStream" uid="uid://cjvyxxhjahtlf" path="res://assets/Audios/Hurt.wav" id="4_hurt"]
 [ext_resource type="AudioStream" uid="uid://b4p8wyxbr64th" path="res://assets/Audios/Shoot.wav" id="5_shoot"]
 
-[sub_resource type="AtlasTexture" id="AT_pi0"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AT_tw0"]
+atlas = ExtResource("2_tank")
+region = Rect2(0, 0, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AT_pi1"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AT_tw1"]
+atlas = ExtResource("2_tank")
+region = Rect2(512, 0, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AT_pi2"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AT_tw2"]
+atlas = ExtResource("2_tank")
+region = Rect2(1024, 0, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AT_pi3"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AT_tw3"]
+atlas = ExtResource("2_tank")
+region = Rect2(0, 512, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AT_pw0"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AT_tw4"]
+atlas = ExtResource("2_tank")
+region = Rect2(512, 512, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AT_pw1"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AT_pw2"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AT_pw3"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AT_pa0"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AT_pa1"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AT_pa2"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AT_pa3"]
-atlas = ExtResource("2_v6fml")
-region = Rect2(96, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AT_tw5"]
+atlas = ExtResource("2_tank")
+region = Rect2(1024, 512, 512, 512)
 
 [sub_resource type="SpriteFrames" id="SF_player"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AT_pi0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_pi1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_pi2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_pi3")
+"texture": SubResource("AT_tw0")
 }],
 "loop": true,
 "name": &"idle",
@@ -75,37 +44,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AT_pw0")
+"texture": SubResource("AT_tw0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AT_pw1")
+"texture": SubResource("AT_tw1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AT_pw2")
+"texture": SubResource("AT_tw2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AT_pw3")
+"texture": SubResource("AT_tw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_tw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_tw5")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AT_pa0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_pa1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_pa2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AT_pa3")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0vlq"]
@@ -115,9 +73,13 @@ radius = 20.0
 script = ExtResource("1_p0vlq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1048227568]
-scale = Vector2(2.0, 2.0)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SF_player")
-autoplay = "idle"
+animation = &"idle"
+
+[node name="TurretSprite" type="Sprite2D" parent="." unique_id=723841029]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_turret")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118986889]
 shape = SubResource("CircleShape2D_p0vlq")
