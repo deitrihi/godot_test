@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [미커밋]
+## 2026-05-21 | 9174919
 
 - scenes/Player.tscn — 탱크 스프라이트(default_tank_up_6.png)로 교체, 6프레임 walk / idle 애니메이션 정의
 - scripts/Player.gd — flip_h 제거, 이동 방향 rotation 적용 (last_direction 기반)
