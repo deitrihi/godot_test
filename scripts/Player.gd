@@ -8,6 +8,7 @@ func _ready() -> void:
 var max_health := GameConfig.player_max_health
 var health := GameConfig.player_max_health
 var is_dead := false
+var last_direction := Vector2.UP
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
@@ -22,10 +23,15 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	if direction != Vector2.ZERO:
+		last_direction = direction
 		$AnimatedSprite2D.play("walk")
-		$AnimatedSprite2D.flip_h = direction.x < 0
 	else:
 		$AnimatedSprite2D.play("idle")
+
+	$AnimatedSprite2D.rotation = last_direction.angle() + PI / 2
+
+func set_turret_direction(dir: Vector2) -> void:
+	$TurretSprite.rotation = dir.angle() + PI / 2
 
 func take_damage(amount: int) -> void:
 	if is_dead:
